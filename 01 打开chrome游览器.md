@@ -1,0 +1,4 @@
+1、安装好python3.7
+2、通过pip.exe install selenium安装好selenium
+3、python编程打开电脑chrome游览器
+4、运行之前要将自己电脑上chrome游览器对应的chromedriver.exe放在python的目录下，这样才可以打开电脑上的chrome游览器
