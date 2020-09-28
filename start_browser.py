@@ -21,6 +21,14 @@ locator = (By.CLASS_NAME, "controls")
 # webDriverwait(driver,10)表示在页面中找元素，找10秒钟，找不到就报错提示
 # 如果找到元素则往下运行，没有则返回false
 WebDriverWait(driver, 1).until(EC.visibility_of_element_located(locator))
+email_element = driver.find_element_by_id("register_email")
+# 获取元素的值
+print(email_element.get_attribute("placeholder"))
+email_element.send_keys("test@163.com")
+# 获取用户填入的值
+print(email_element.get_attribute("value"))
+
+
 # 每次实例化一个driver但没有关闭的话会导致电脑越来越卡顿，所以应该关闭掉driver
 driver.close()
 
