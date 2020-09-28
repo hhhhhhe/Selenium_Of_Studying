@@ -2,6 +2,7 @@
 from selenium import webdriver
 import time
 import random
+# python处理图片的库
 from PIL import Image
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
