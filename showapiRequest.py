@@ -1,6 +1,3 @@
-import pytesseract
-from ShowapiRequest import ShowapiRequest
-from PIL import Image
 import requests
 from urllib import parse
 # 全局请求头
@@ -56,21 +53,3 @@ class ShowapiRequest:
             res = requests.post(self.url, files=files,
                                 data=body, headers=headers, timeout=timeout)
         return res
-
-
-# 导入ShowapiRequest包：
-# 生成图片的对象：
-# image = Image.open("C:/我的代码/selenium自动化测试/Selenium3 与 Python3 实战 Web自动化测试框架/imooc2.png")
-# 使用图片转换成文字：
-# text = pytesseract.image_to_string(image)
-# print(text)
-r = ShowapiRequest("http://route.showapi.com/184-4",
-                   "62626", "d61950be50dc4dbd9969f741b8e730f5")
-r.addBodyPara("typeId", "35")
-r.addBodyPara("convert_to_jpg", "0")
-# 定义文件上传设置：
-r.addFilePara(
-    "image", r"C:/我的代码/selenium自动化测试/Selenium3 与 Python3 实战 Web自动化测试框架/imooc1.png")
-res = r.post()
-text = res.json()['showapi_res_body']['Result']
-print(text)  # 返回信息
