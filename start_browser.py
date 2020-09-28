@@ -1,6 +1,7 @@
 # coding=utf-8
 from selenium import webdriver
 import time
+import random
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -27,6 +28,12 @@ print(email_element.get_attribute("placeholder"))
 email_element.send_keys("test@163.com")
 # 获取用户填入的值
 print(email_element.get_attribute("value"))
+
+
+# 自动生成邮箱账户
+for i in range(5):
+    user_email = ''.join(random.sample('1234567890avcah', 5))+"@163.com"
+    print(user_email)
 
 
 # 每次实例化一个driver但没有关闭的话会导致电脑越来越卡顿，所以应该关闭掉driver
